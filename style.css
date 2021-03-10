@@ -1,6 +1,9 @@
 body {
     background-color: #cfd7df;
 }
+.hide {
+    display: none;
+}
 
 #page-container {
     position: relative;

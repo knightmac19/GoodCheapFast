@@ -1,31 +1,28 @@
 $(document).ready(() => {
-    console.log('script ready');
 
-    var good = $('#good');
-    var fast = $('#fast');
-    var cheap = $('#cheap');
+    const inputs = $('.toggle-input');
+    const good = $('#good')[0];
+    const fast = $('#fast')[0];
+    const cheap = $('#cheap')[0];
 
-    const runCheck = el => {
-        if (el[0].checked) {
-            console.log(el[0].id + ' ' + el[0].checked)
-        } else {
-            console.log(el[0].id + ' ' + el[0].checked)
+    $(inputs).on('change', e => {
+        runCheck(e.target);
+    });
+    
+    function runCheck(clicked) {
+        if(good.checked && fast.checked && cheap.checked) {
+            if(good === clicked) {
+                fast.checked = false;
+            }
+            
+            if(cheap === clicked) {
+                good.checked = false;
+            }
+            
+            if(fast === clicked) {
+                cheap.checked = false;
+            }
         }
     }
-
-    good.on('change', function() {
-        runCheck(good);
-    })
-
-    fast.on('change', function() {
-        runCheck(fast);
-    })
-
-    cheap.on('change', function() {
-        runCheck(cheap);
-    })
-
-    
-
 });
 

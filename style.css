@@ -15,6 +15,9 @@ body {
     background: linear-gradient(to bottom, #16943a, #cfd7df);
 }
 
+.fa-github {
+    color: #16943a;
+}
 
 #footer {
     position: absolute;
